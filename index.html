@@ -2362,7 +2362,7 @@ canvas.ascii-bg {
 .tl-node {
   position: relative;
   display: grid;
-  grid-template-columns: var(--tl-axis-w) minmax(0, 7em) minmax(0, 7.6em) 1fr;
+  grid-template-columns: var(--tl-axis-w) minmax(0, 7em) minmax(0, 12em) 1fr;
   gap: 0 var(--sp-5);
   align-items: center;
   padding: var(--sp-7) 0;
@@ -4154,7 +4154,7 @@ if (/Win/i.test(navigator.platform || navigator.userAgentData?.platform || "")) 
         <div class="tl-axis"><span class="dot"></span></div>
         <span class="yr">EMIT</span>
         <span class="multi">160<span class="unit">bit</span></span>
-        <p class="desc">emitChunk 切片 → chunkStore 发射：SHA-1 分桶后逐字节确认，命中复用既有指针。</p>
+        <p class="desc">emitChunk 切片 → chunkStore 查重：SHA-1 分桶后逐字节确认，命中复用既有指针。</p>
       </div>
       <div class="tl-node accent">
         <div class="tl-axis"><span class="dot"></span></div>
