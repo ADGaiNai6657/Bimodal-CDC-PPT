@@ -3873,7 +3873,7 @@ if (/Win/i.test(navigator.platform || navigator.userAgentData?.platform || "")) 
           </div>
           <div class="th-node down">
             <span class="dot"></span>
-            <span class="label"><span class="yr">STEP 02</span><span class="name">逐块查重</span><span class="desc" style="font-size:max(16px,.9vw)">精确存在性查询，前瞻 1 个大块</span></span>
+            <span class="label"><span class="yr">STEP 02</span><span class="name">逐块查重</span><span class="desc" style="font-size:max(16px,.9vw)">精确存在性查询，前/后瞻 1 个大块</span></span>
           </div>
           <div class="th-node up">
             <span class="dot" style="background:var(--accent)"></span>
@@ -3918,8 +3918,8 @@ if (/Win/i.test(navigator.platform || navigator.userAgentData?.platform || "")) 
         <div class="col-ttl">自底向上</div>
         <div class="col-desc">先用小块器切分，再把连续 k 个小块合成大块查询；k-var 还允许 1..k 变长。</div>
         <ul class="col-list">
-          <li>k-fixed 约 k 次查询 / 大块</li>
-          <li>k-var 可达 k(k−1) 次 / 大块</li>
+          <li>k-fixed 约 k 次查询 / 大块；即，1 次查询 / 小块</li>
+          <li>k-var 可达 k(k−1) 次 / 大块；即，k 次查询 / 小块</li>
           <li>实现于 <span style="font-family:var(--mono)">amalgamation(_k-var)</span> 分支</li>
         </ul>
       </div>
