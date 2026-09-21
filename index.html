@@ -3873,7 +3873,7 @@ if (/Win/i.test(navigator.platform || navigator.userAgentData?.platform || "")) 
           </div>
           <div class="th-node down">
             <span class="dot"></span>
-            <span class="label"><span class="yr">STEP 02</span><span class="name">逐块查重</span><span class="desc" style="font-size:max(16px,.9vw)">精确存在性查询，前/后瞻 1 个大块</span></span>
+            <span class="label"><span class="yr">STEP 02</span><span class="name">逐块查重</span><span class="desc" style="font-size:max(16px,.9vw)">记录上/下一大块是否重复（下一块前瞻 1 次，带缓存）</span></span>
           </div>
           <div class="th-node up">
             <span class="dot" style="background:var(--accent)"></span>
@@ -3887,7 +3887,7 @@ if (/Win/i.test(navigator.platform || navigator.userAgentData?.platform || "")) 
       </div>
       <div style="border-top:1px solid var(--border-subtle);padding-top:1.6vh;display:flex;justify-content:space-between;gap:2vw">
         <span class="t-helper" style="font-size:max(16px,.86vw)">小块切点按需现算：全新文件 / 首个备份完全不会跑小块器。</span>
-        <span class="t-meta">FIG.1 · LOOKAHEAD = 1 BIG CHUNK</span>
+        <span class="t-meta">FIG.1 · PREV 记忆 + NEXT 前瞻 1 块</span>
       </div>
     </div>
   </div>
