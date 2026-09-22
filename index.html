@@ -4019,12 +4019,13 @@ if (/Win/i.test(navigator.platform || navigator.userAgentData?.platform || "")) 
       </div>
       <div style="display:flex;flex-direction:column;gap:1.6vh">
         <p class="t-body" style="color:var(--text-secondary);font-size:max(16px,1.02vw)">论文在 1.16 TB Netware 全量备份上，用 Bloom filter 回答存在性查询，并做了 LZO 压缩估计。</p>
-        <p class="t-body" style="color:var(--text-secondary);font-size:max(16px,1.02vw)">四组源码 tar 上，k-fixed 的平均块长约为 baseline 的 2.5×，DER 最差下降约 8%。</p>
+        <p class="t-body" style="color:var(--text-secondary);font-size:max(16px,1.02vw)">拆分式（Fig.6）：小块器取 baseline 的 1/4–1/8，块长 ≳40k 时性能可与 k-fixed 竞争，且每大块只查一次，查询量少 k 倍。</p>
+        <p class="t-body" style="color:var(--text-secondary);font-size:max(16px,1.02vw)">合成式（Fig.5、Table 1）：四组源码 tar 上 k-fixed 平均块长约 baseline 的 2.5×，DER 最差下降约 8%；k-var 只略好但查询更多。</p>
       </div>
     </div>
     <div data-anim="up" class="ink-banner-full">
       <div style="font-family:var(--sans),var(--sans-zh);font-weight:200;font-size:min(2.5vw,4.4vh);line-height:1.1;letter-spacing:-.02em;color:#fff">简单启发式 + 存在性查询，就能接近更复杂算法的块长。</div>
-      <div class="t-meta" style="color:rgba(255,255,255,.62);text-align:right">k-var 略好但查询多 · Bloom 假阳性约 2.5% 会抵消收益<br/>P1/P2 不严格成立，算法仍稳健</div>
+      <div class="t-meta" style="color:rgba(255,255,255,.62);text-align:right">拆分式查询少 k 倍 · k-var 略好但查询多 · Bloom 假阳性约 2.5% 会抵消收益<br/>P1/P2 不严格成立，算法仍稳健</div>
     </div>
   </div>
 </section>
@@ -4647,8 +4648,8 @@ const SPEAKER_NOTES = [
     purpose: "快速收束论文部分，避免陷入论文的实验图",
     talk: [
       "论文在 1.16 TB 真实备份和四组源码 tar 上测，块长能放大 2 到 4 倍而 DER 相当",
-      "k-var 只略好；Bloom filter 的假阳性到 2.5% 就会把收益吃掉",
-      "这些结论我们不去逐图展开，重点看本项目能不能在小规模上复现同样的趋势"
+      "拆分式用约为 baseline 1/4 到 1/8 的小块器，块长大于 40k 时能和 k-fixed 竞争，且每大块只查一次",
+      "k-var 只略好；Bloom filter 的假阳性到 2.5% 就会把收益吃掉，这些结论我们只做一句话小结"
     ],
     transition: "接下来是我们自己的复现，从代码结构讲到实测数据",
     advance: "这一页快速过，不要停留在论文的实验细节"
