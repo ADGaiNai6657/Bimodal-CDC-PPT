@@ -4021,7 +4021,7 @@ if (/Win/i.test(navigator.platform || navigator.userAgentData?.platform || "")) 
         <p class="t-body" style="color:var(--text-secondary);font-size:max(16px,1.02vw)">论文在 1.16 TB Netware 全量备份上，用 Bloom filter 回答存在性查询，并做了 LZO 压缩估计。</p>
         <p class="t-body" style="color:var(--text-secondary);font-size:max(16px,1.02vw)">拆分式（Fig.6）：小块器取 baseline 的 1/4–1/8，块长 ≳40k 时性能可与 k-fixed 竞争，且每大块只查一次，查询量少 k 倍。</p>
         <p class="t-body" style="color:var(--text-secondary);font-size:max(16px,1.02vw)">合成式（Fig.5、Table 1）：四组源码 tar 上 k-fixed 平均块长约 baseline 的 2.5×，DER 最差下降约 8%；k-var 只略好但查询更多。</p>
-        <p class="t-body" style="color:var(--text-secondary);font-size:max(16px,1.02vw)">论文只给出拆分式的 Fig.6 曲线（未列表）。本项目实测 DER：拆分式 7.861 / 1.992，baseline 7.774 / 1.927（DataSet_4 / DataSet_3）。</p>
+        <p class="t-body" style="color:var(--text-secondary);font-size:max(16px,1.02vw)">本项目实测 DER：拆分式 7.861 / 1.992，baseline 7.774 / 1.927（DataSet_4 / DataSet_3）。</p>
       </div>
     </div>
     <div data-anim="up" class="ink-banner-full">
